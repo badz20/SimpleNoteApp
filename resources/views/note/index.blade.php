@@ -1,14 +1,10 @@
 @extends('layout.app')
 
 @section('content')
-    <div class="d-flex justify-content-between m-5">
-     <h3>List of notes</h3>
-    </div>
-
-    <div class="container">
-        <div class="card col-md-6">
-        <div class="card-body">
-        <div>
+<div class="container d-flex justify-content-center">
+<div class="card w-75 ">
+    <div class="card-body">
+    <div  class="w-50">
             @if (session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
@@ -24,38 +20,33 @@
                     </div>
                 @endif
         </div>
-            <div class="d-flex justify-content-end mb-3">
-                <a href="" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Create note</a>
+    <div class="container d-flex justify-content-between align-items-center gap-3">
+        
+     <h3>List of notes</h3>
+     <div class="d-flex justify-content-end">
+                <a href="" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add notes</a>
             </div>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-              @foreach ($notes as $note)
-                <tbody>
-                    <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $note->name }}</td>
-                        <td>{{ $note->description }}</td>
-                        <td>
-                            <div class="d-flex justify-content-start gap-2">
-                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editNoteModal{{ $note->id }}">Edit</button>
+    </div>
+
+    <div class="notes-container">
+        @foreach ($notes as $note)
+            <div class="note-card">
+            {{ $loop->iteration }}
+            <div class="d-flex justify-content-start gap-2">
+            
+                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editNoteModal{{ $note->id }}"> <i class="fas fa-pencil"></i></button>
                         <form action="{{ route('note.delete', $note->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm"">Delete</button>
+                        <button type="submit" class="btn btn-danger btn-sm""><i class="fas fa-trash"></i></button>
                         </form>
-                            </div>
-                        
-                        </td>
-                    </tr>
-                    <!-- Edit note Modal -->
-                <div class="modal fade" id="editNoteModal{{ $note->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        </div>
+                <h3>{{ $note->name }}</h3>
+                <p>{{ Str::limit($note->description, 100) }}</p>
+                
+            </div>
+
+            <div class="modal fade" id="editNoteModal{{ $note->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                     <div class="modal-header">
@@ -84,14 +75,14 @@
                     </div>
                 </div>
                 </div>
-                </tbody>
-               @endforeach
-            </table>
-        </div>
-        </div>
+        @endforeach
     </div>
 
-    <!-- Add note Modal -->
+    </div>
+</div>
+</div>
+
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
