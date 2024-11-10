@@ -9,13 +9,14 @@
 
 <h1>Simple Note App</h1>
 
-<p>This is a simple Laravel note-taking application. It provides an easy and single page of view for users to create, edit, and delete notes. I also have used modal from bootstrap 5 for the create & edit form. This application is a basic example of Laravel's CRUD (Create, Read, Update, Delete).</p>
+<p>This is a simple Laravel note-taking application. I'm using a single page instead of redirect to other pages so that users can get the  minimal and easy view for create, edit, and delete notes. I also have used modal from bootstrap 5 for the create & edit form. This application is a basic example of Laravel's CRUD (Create, Read, Update, Delete).</p>
 
 <h2>Features</h2>
 <ul>
+<li><strong>View Notes</strong>: See a list of all notes created.</li>
   <li><strong>Create a Note</strong>: Add a new note with a title and content.</li>
-  <li><strong>View Notes</strong>: See a list of all notes created.</li>
-  <li><strong>Edit Notes</strong>: Update the title and content of existing notes.</li>
+  
+  <li><strong>Edit Notes</strong>: Update the name and description of existing notes.</li>
   <li><strong>Delete Notes</strong>: Remove notes that are no longer needed.</li>
 </ul>
 
@@ -48,7 +49,7 @@ php artisan key:generate</code></pre>
   <li><strong>Home Page</strong>: Lists all of notes.</li>
   <li><strong>Add New Note</strong>: Click on "Add notes" to create a note.</li>
   <li><strong>Edit Note</strong>: Click on pencil icon to edit.</li>
-  <li><strong>Delete Note</strong>: Remove notes directly from the list.</li>
+  <li><strong>Delete Note</strong>: Click on bin icon to remove directly from the list</li>
 </ol>
 
 <h2>Technologies Used</h2>
