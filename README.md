@@ -23,7 +23,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 <h1>Simple Note App</h1>
 
-<p>This is a simple Laravel note-taking application. It provides easy and single page of view for users to create, edit, and delete notes. I also have used modal from bootstrap 5 for the create & edit form. This application is a basic example of Laravel's CRUD (Create, Read, Update, Delete).</p>
+<p>This is a simple Laravel note-taking application. It provides an easy and single page of view for users to create, edit, and delete notes. I also have used modal from bootstrap 5 for the create & edit form. This application is a basic example of Laravel's CRUD (Create, Read, Update, Delete).</p>
 
 <h2>Features</h2>
 <ul>
