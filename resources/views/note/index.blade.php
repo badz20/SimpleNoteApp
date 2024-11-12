@@ -38,7 +38,7 @@
                         <form action="{{ route('note.delete', $note->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm""><i class="fas fa-trash"></i></button>
+                        <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                         </form>
                         </div>
                 <h3>{{ $note->name }}</h3>
