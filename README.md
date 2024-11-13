@@ -29,6 +29,9 @@ cd SimpleNoteApp</code></pre>
   <li>Install dependencies using Composer:
     <pre><code>composer install</code></pre>
   </li>
+  <li>Install dependencies using node:
+    <pre><code>npm install</code></pre>
+  </li>
   <li>Set up the <code>.env</code> file:
     <pre><code>cp .env.example .env
 php artisan key:generate</code></pre>
@@ -36,6 +39,9 @@ php artisan key:generate</code></pre>
   <li>Configure your database in the <code>.env</code> file.</li>
   <li>Run the migrations to create the database tables:
     <pre><code>php artisan migrate</code></pre>
+  </li>
+  <li>Serve the application:
+    <pre><code>npm run dev</code></pre>
   </li>
   <li>Serve the application:
     <pre><code>php artisan serve</code></pre>
