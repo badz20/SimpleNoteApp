@@ -13,6 +13,15 @@ class NoteController extends Controller
         return view('note.index', compact('notes'));
     }
 
+    public function create(){
+        return view('note/add-note');
+    }
+
+    public function edit($id){ 
+        $note = Note::findOrFail($id);
+        return view('note/edit-note', compact('note'));
+    }
+
     public function store(Request $request){
 
         $data = $request->validate([
